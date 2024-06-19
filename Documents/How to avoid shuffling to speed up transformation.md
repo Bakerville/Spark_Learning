@@ -1,0 +1,8 @@
+As I represented, some **Transformation** can cause shuffle, what can take more time and resourses. There are some ways to avoid shuffling:
+- **1. Use partitioning on computation engine level :** Ensure that the data is evenly distributed across the nodes and . You can use the `repartition` or `coalesce` to change the number of partitions in a DataFrame.
+- **2. Use Partitioning in the underlying storage system:** Ensure partitioning data in the underlying storage system: If you are using a storage system that supports data partitioning or data bucketing, you can use the data partitioning features of the storage system to partition the data in a way that minimizes shuffling. Partitioning your data according to the consumption pattern, as example partitioning the data by a date or by a category it is commonly a good choice. This will ensure that data with the same partition key are stored together and then minimizing shuffling when performing queries on the data.
+- **3. Use format files that is optimized for Spark such as Parquet or ORC
+- **4. Use filtering and aggregation instead of groupBy:** If you only need to filter the data or perform simple aggregations, you can use the `filter` and `agg` transformations instead of `groupBy`. These transformations do not trigger shuffling.
+- **5. Use broadcast datasets:** Broadcast can help to distribute smaller datasets to all the cluster nodes if you need to combine two sizable datasets. As a result, less information may need to be shuffled.
+- **6. Use SparkSQL**: Use SparkSQL to express your queries more effectively if you need to filter, group, or aggregate data. Most of the time, SparkSQL can reduce shuffling and improve the execution of these queries.
+- 
