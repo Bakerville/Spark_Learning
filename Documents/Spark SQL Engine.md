@@ -1,4 +1,4 @@
-![[Pasted image 20240618091349.png]]
+![alt text](images/Pasted%20image%2020240618091349.png)
 
 The above picture demonstrates Spark API including: Spark SQL, Dataframe API, Dataset API. It highly recommend to use Spark SQl, Dataframes API instead of RDD APIs.
 
