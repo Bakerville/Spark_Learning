@@ -1,4 +1,4 @@
-![[Spark_Read_Operation.png]]
+![[/images/Spark_Read_Operation.png]]
 
 A file is stored in S3 or HDFS (specified distributed storages). Assume that you have these 10 nodes storage cluster in HDFS. The .csv file can be broken into many smaller partitions and stored in these 10 nodes. Since the file is partitioned, so the DataFrameReader is also going to read them as a bunch of in-memory partitions.
 
